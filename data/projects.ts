@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "A production-ready SaaS platform built for finance collection companies to manage branches, employees, customer records, collections, analytics, reporting, and operational workflows through a centralized dashboard.",
     featuredDescription:
       "A production-ready SaaS platform developed for finance collection companies to manage branches, employees, customer records, collections, analytics, reporting, and operational workflows through a centralized dashboard.\n\nKey features include role-based access control, branch management, employee management, customer tracking, and collection tracking, alongside bulk Excel upload for fast data onboarding.\n\nThe platform also includes an analytics dashboard, detailed reports, and performance monitoring, all deployed on cloud infrastructure for reliability and scale.",
-    image: PLACEHOLDER_IMAGES.project,
+    image: "/images/Collectpro-website.png",
     featured: true,
     rowSpan: true,
   },
@@ -53,7 +53,7 @@ export const projects: Project[] = [
       "A professional business website designed and developed for an advocate, focused on credibility, user experience, SEO, responsive design, and online client engagement.",
     featuredDescription:
       "Designed and developed a professional business website for an advocate with a focus on credibility, user experience, SEO, responsive design, and online client engagement.\n\nThe build covered everything from layout and content structure to cloud deployment, domain configuration, and performance optimization, resulting in a fast, trustworthy online presence for the client.",
-    image: PLACEHOLDER_IMAGES.project,
+    image: "/images/Advocate-R-Thirumoorthy.png",
     featured: true,
   },
   {

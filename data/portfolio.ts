@@ -6,7 +6,7 @@ export const portfolio = {
   namePrefix: "sanjay",
   nameAccent: "kumar",
   title: "Sanjay Kumar | Cloud Engineer | DevOps Engineer | Full-Stack Developer | Product Analyst",
-  role: "Cloud Engineer • DevOps Engineer • Full-Stack Developer • Product Analyst",
+  role: "Cloud Engineer DevOps Engineer Full-Stack Developer Product Analyst Business Analyst Business Applications",
   location: "Chennai, Tamil Nadu, India",
   tagline:
     "I build scalable cloud applications, automate deployment pipelines, and develop production-ready business solutions. From product planning to deployment and maintenance, I help businesses transform ideas into reliable digital products.",

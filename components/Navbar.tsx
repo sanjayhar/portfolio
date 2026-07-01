@@ -116,7 +116,7 @@ export function Navbar({
             href={variant === "home" ? "#contact" : "/#contact"}
             className="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors"
           >
-            Hire me <ArrowRightIcon />
+            Contact me <ArrowRightIcon />
           </Link>
 
           <button
@@ -163,7 +163,7 @@ export function Navbar({
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full"
               >
-                Hire me →
+                Contact me →
               </Link>
             </li>
           </ul>

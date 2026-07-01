@@ -47,7 +47,7 @@ App
 │   ├── Logo (eli + ott accent split)
 │   ├── Desktop nav links
 │   ├── Dark mode toggle
-│   ├── "Hire me" CTA
+│   ├── "Contact me" CTA
 │   └── Mobile hamburger menu (Alpine x-show + x-transition)
 ├── Main content (page-specific)
 └── Footer
