@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type ElementType, type ReactNode, type RefObject } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 interface UseRevealOptions {
   threshold?: number;
@@ -9,9 +9,10 @@ interface UseRevealOptions {
 }
 
 export function useReveal<T extends HTMLElement = HTMLDivElement>(
-  options: UseRevealOptions = {},
+  options: UseRevealOptions = {}
 ) {
-  const ref = useRef<T>(null);
+  const ref = useRef<T | null>(null);
+
   const {
     threshold = 0.1,
     rootMargin = "0px 0px -40px 0px",
@@ -19,8 +20,9 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
   } = options;
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const element = ref.current;
+
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -31,41 +33,49 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
           }
         });
       },
-      { threshold, rootMargin },
+      {
+        threshold,
+        rootMargin,
+      }
     );
 
-    observer.observe(el);
+    observer.observe(element);
+
     return () => observer.disconnect();
   }, [threshold, rootMargin, visibleClass]);
 
   return ref;
 }
 
+interface RevealProps {
+  children: ReactNode;
+  className?: string;
+  delayClass?: string;
+  visibleClass?: string;
+  threshold?: number;
+  rootMargin?: string;
+}
+
 export function Reveal({
   children,
   className = "",
   delayClass = "",
-  as: Tag = "div",
   visibleClass = "in",
   threshold,
   rootMargin,
-}: {
-  children: ReactNode;
-  className?: string;
-  delayClass?: string;
-  as?: ElementType;
-  visibleClass?: string;
-  threshold?: number;
-  rootMargin?: string;
-}) {
-  const ref = useReveal<HTMLElement>({ threshold, rootMargin, visibleClass });
+}: RevealProps) {
+  const ref = useReveal<HTMLDivElement>({
+    threshold,
+    rootMargin,
+    visibleClass,
+  });
 
   return (
-    <Tag
-      ref={ref as RefObject<never>}
+    <div
+      ref={ref}
       className={`reveal ${delayClass} ${className}`.trim()}
     >
       {children}
-    </Tag>
+    </div>
   );
 }

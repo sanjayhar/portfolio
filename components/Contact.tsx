@@ -4,33 +4,30 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-24 bg-background"
-    >
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-16">
-          <p className="text-accent uppercase tracking-widest text-sm font-semibold">
+    <section id="contact" className="py-24 bg-background">
+      <div className="container mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             Contact
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4">
-            Let's Work Together
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+            Let&apos;s Work Together
           </h2>
 
-          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+          <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
             Looking for a modern website, business application, cloud
             deployment, or technical consultation? Feel free to reach out.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid gap-12 lg:grid-cols-2">
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="flex items-start gap-4">
-              <Mail className="text-accent mt-1" size={24} />
+              <Mail className="mt-1 text-accent" size={24} />
               <div>
-                <h3 className="font-semibold text-lg">Email</h3>
+                <h3 className="text-lg font-semibold">Email</h3>
                 <p className="text-muted-foreground">
                   sanjaiharish0402@gmail.com
                 </p>
@@ -38,9 +35,9 @@ export function Contact() {
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="text-accent mt-1" size={24} />
+              <Phone className="mt-1 text-accent" size={24} />
               <div>
-                <h3 className="font-semibold text-lg">Phone</h3>
+                <h3 className="text-lg font-semibold">Phone</h3>
                 <p className="text-muted-foreground">
                   +91 9360491933
                 </p>
@@ -48,9 +45,9 @@ export function Contact() {
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin className="text-accent mt-1" size={24} />
+              <MapPin className="mt-1 text-accent" size={24} />
               <div>
-                <h3 className="font-semibold text-lg">Location</h3>
+                <h3 className="text-lg font-semibold">Location</h3>
                 <p className="text-muted-foreground">
                   Chennai, Tamil Nadu, India
                 </p>
@@ -63,25 +60,25 @@ export function Contact() {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full rounded-lg border px-4 py-3 bg-transparent outline-none focus:border-accent"
+              className="w-full rounded-lg border bg-transparent px-4 py-3 outline-none focus:border-accent"
             />
 
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full rounded-lg border px-4 py-3 bg-transparent outline-none focus:border-accent"
+              className="w-full rounded-lg border bg-transparent px-4 py-3 outline-none focus:border-accent"
             />
 
             <input
               type="text"
               placeholder="Subject"
-              className="w-full rounded-lg border px-4 py-3 bg-transparent outline-none focus:border-accent"
+              className="w-full rounded-lg border bg-transparent px-4 py-3 outline-none focus:border-accent"
             />
 
             <textarea
               rows={6}
               placeholder="Your Message"
-              className="w-full rounded-lg border px-4 py-3 bg-transparent outline-none resize-none focus:border-accent"
+              className="w-full resize-none rounded-lg border bg-transparent px-4 py-3 outline-none focus:border-accent"
             />
 
             <button
