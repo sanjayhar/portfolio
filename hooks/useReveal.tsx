@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, type ElementType, type ReactNode, type RefObject } from "react";
+import {
+  createElement,
+  useEffect,
+  useRef,
+  type ComponentPropsWithoutRef,
+  type ElementType,
+  type ReactNode,
+} from "react";
 
 interface UseRevealOptions {
   threshold?: number;
@@ -41,31 +48,36 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
   return ref;
 }
 
-export function Reveal({
-  children,
-  className = "",
-  delayClass = "",
-  as: Tag = "div",
-  visibleClass = "in",
-  threshold,
-  rootMargin,
-}: {
+type RevealProps<T extends ElementType = "div"> = {
   children: ReactNode;
   className?: string;
   delayClass?: string;
-  as?: ElementType;
+  as?: T;
   visibleClass?: string;
   threshold?: number;
   rootMargin?: string;
-}) {
+} & Omit<ComponentPropsWithoutRef<T>, "as" | "children" | "className">;
+
+export function Reveal<T extends ElementType = "div">({
+  children,
+  className = "",
+  delayClass = "",
+  as,
+  visibleClass = "in",
+  threshold,
+  rootMargin,
+  ...props
+}: RevealProps<T>) {
+  const Component = (as || "div") as ElementType;
   const ref = useReveal<HTMLElement>({ threshold, rootMargin, visibleClass });
 
-  return (
-    <Tag
-      ref={ref as RefObject<never>}
-      className={`reveal ${delayClass} ${className}`.trim()}
-    >
-      {children}
-    </Tag>
+  return createElement(
+    Component,
+    {
+      ref,
+      className: `reveal ${delayClass} ${className}`.trim(),
+      ...props,
+    },
+    children,
   );
 }
